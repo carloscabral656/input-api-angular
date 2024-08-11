@@ -1,5 +1,5 @@
-import {Component, input, model} from '@angular/core';
-import {CourseCategory} from "../models/course-category.model";
+import { Component, input, model } from '@angular/core';
+import { CourseCategory } from "../models/course-category.model";
 
 @Component({
   selector: 'course-category-combobox',
@@ -10,5 +10,11 @@ import {CourseCategory} from "../models/course-category.model";
 })
 export class CourseCategoryComboboxComponent {
 
+  label = input.required<string>();
+  value = model.required<CourseCategory>();
+
+  onCategoryChanged(category: string) {
+    this.value.set(category as CourseCategory);
+  }
 
 }

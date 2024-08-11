@@ -1,6 +1,6 @@
-import {Component, inject, Signal} from "@angular/core";
-import {MatProgressSpinner} from "@angular/material/progress-spinner";
-import {LoadingService} from "./loading.service";
+import { Component, inject, Signal } from "@angular/core";
+import { MatProgressSpinner } from "@angular/material/progress-spinner";
+import { LoadingService } from "./loading.service";
 
 @Component({
   selector: "loading",
@@ -11,6 +11,8 @@ import {LoadingService} from "./loading.service";
 })
 export class LoadingIndicatorComponent {
 
+  loadingService = inject(LoadingService);
+  loading = this.loadingService.loading;
 
 
 }
